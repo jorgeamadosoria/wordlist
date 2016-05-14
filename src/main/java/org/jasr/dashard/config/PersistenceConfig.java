@@ -30,12 +30,16 @@ class PersistenceConfig {
     @Bean
     public JdbcTemplate jdbcTemplate() {
     	return new JdbcTemplate(dataSource());
-    }
+    }	
     @Bean
     public DataSource dataSource() {
+    	
+    	
+    	ClassLoader classLoader = getClass().getClassLoader();
+
         HikariConfig config = new HikariConfig();
         config.setDriverClassName("org.sqlite.JDBC");
-        config.setJdbcUrl("jdbc:sqlite:wordslist.sqlite");
+        config.setJdbcUrl("jdbc:sqlite:" + classLoader.getResource("words.sqlite").toString());
         config.setUsername("");
         config.setPassword("");
         config.addDataSourceProperty("cachePrepStmts", "true");
