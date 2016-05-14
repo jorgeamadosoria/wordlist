@@ -1,69 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Dashboard for Arduino</title>
+<title>Word list for 4 Pics 1 Word</title>
 <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="dist/css/jquery-ui.min.css" rel="stylesheet">
 <link href="dist/css/font-awesome.min.css" rel="stylesheet">
-<link href="dist/css/dashard.css" rel="stylesheet">
+<link href="dist/css/app.css" rel="stylesheet">
 </head>
 <body>
 	<header>
 		<div class="row">
-			<div class="col-lg-4">
-				<a href="index.html"><img class="logo" src="dist/img/Dashboard.png"></a>
+			<div class="col-lg-2">
+				<a href="index.html"><img class="logo" src="dist/img/logo.png"></a>
 			</div>
-			<div class="col-lg-8 page-header">
-				<h1>Dashboard for Arduino</h1>
+			<div class="col-lg-10">
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3">
+						<div id="letters" class="panel panel-primary">
+							<div class="panel-body">
+								<form action="list" method="get">
+
+									<div class="row">
+										<div class="col-lg-1 col-lg-offset-2">
+											<input name="letters0" class="letter form-control"
+												maxlength="1">
+										</div>
+										<div class="col-lg-1">
+											<input name="letters1" class="letter form-control"
+												maxlength="1">
+										</div>
+										<div class="col-lg-1">
+											<input name="letters2" class="letter form-control"
+												maxlength="1">
+										</div>
+										<div class="col-lg-1">
+											<input name="letters3" class="letter form-control"
+												maxlength="1">
+										</div>
+										<div class="col-lg-1">
+											<input name="letters4" class="letter form-control"
+												maxlength="1">
+										</div>
+										<div class="col-lg-1">
+											<input name="letters5" class="letter form-control"
+												maxlength="1">
+										</div>
+										<div class="col-lg-2">
+											<select name="length" class="form-control">
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+												<option>8</option>
+												<option>9</option>
+												<option>10</option>
+												<option>11</option>
+												<option>12</option>
+											</select>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-1 col-lg-offset-2">
+											<input name="letters6" class="letter form-control"
+												maxlength="1">
+										</div>
+										<div class="col-lg-1">
+											<input name="letters7" class="letter form-control"
+												maxlength="1">
+										</div>
+										<div class="col-lg-1">
+											<input name="letters8" class="letter form-control"
+												maxlength="1">
+										</div>
+										<div class="col-lg-1">
+											<input name="letters9" class="letter form-control"
+												maxlength="1">
+										</div>
+										<div class="col-lg-1">
+											<input name="letters10" class="letter form-control"
+												maxlength="1">
+										</div>
+										<div class="col-lg-1">
+											<input name="letters11" class="letter form-control"
+												maxlength="1">
+										</div>
+										<div class="col-lg-2">
+											<input type="submit" class="btn btn-default" value="Search"/>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</header>
 	<div class="row">
-		<div class="col-lg-12"><hr></div>
-	</div>
-	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1">
-			<div id="page-wrapper">
-				<div class="row">
-					<div class="col-lg-2">
-						<a href="upsert.html"><i class="fa fa-plus-circle fa-2x"></i>Add new device</a>
-					</div>
-				</div>
-				<div class="row table-responsive">
-					<table id="devices" class="table">
-						<thead>
-							<th class="col-lg-3">Name</th>
-							<th class="col-lg-6">Description</th>
-							<th class="col-lg-3">Actions</th>
-							<tr id="deviceRow" class="hidden">
-								<td id="name"></td>
-								<td id="description"></td>
-								<td><a href="view.html?id="><i class=""></i>View</a>&nbsp;
-									<a href="upsert.html?id="><i class=""></i>Update</a>&nbsp; <a
-									href="devices/delete?id="><i class=""></i>Delete</a>&nbsp;</td>
-							</tr>
-						</thead>
-						<tbody id="devicesList">
-
-						</tbody>
-					</table>
-				</div>
-			</div>
+			<div id="list"></div>
 		</div>
 	</div>
-	<footer>
+	<footer class="footer">
 		<div class="row">
 			<div class="col-lg-10 col-lg-offset-1 text-center">
-				2016 - <a href="https://github.com/jorgeamadosoria/dashard"><i
+				2016 - <a href="https://github.com/jorgeamadosoria/wordlist"><i
 					class="fa fa-github"></i></a>
 			</div>
 		</div>
 	</footer>
 	<script src="dist/js/jquery.min.js"></script>
 	<script src="dist/js/jquery-ui.min.js"></script>
-	<script src="dist/js/dashard.js"></script>
+	<script src="dist/js/app.js"></script>
 	<script>
-		$(document).ready(initList);
+		$(document).ready(init);
 	</script>
 </body>
 

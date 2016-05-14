@@ -17,11 +17,11 @@ public class WordController {
 	private WordDAO wordDAO;
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public List<String> list(Integer length, String letters) {
+	public List<String> list(Integer length, String[] letters) {
 
-		letters = letters.toLowerCase();
 		Map<Character, Integer> map = new HashMap<>();
-		for (Character c : letters.toCharArray()) {
+		for (String s : letters) {
+		    Character c = s.toLowerCase().charAt(0);
 			map.merge(c,1, (k, v) -> v + 1);
 		}
 

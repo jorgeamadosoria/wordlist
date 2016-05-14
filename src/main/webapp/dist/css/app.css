@@ -1,0 +1,41 @@
+#page-wrapper {
+    padding: 10px 10px 10px 10px;
+    min-height: 568px;
+    background-color: #fff;
+}
+
+.switch-margin {
+	margin-top: 10px;
+	margin-bottom: 10px
+}
+
+.empty {
+	background-color: green;
+}
+
+.logo {
+	height:10em
+}
+
+.padding-right {
+	font-size: 30px;
+	padding: 1px 25px 1px 10px;
+}
+
+.letter {
+	width:34px;
+	
+}
+
+footer {
+	background-color: #f5f5f5;
+    bottom: 0;
+    height: 60px;
+    position: absolute;
+    width: 100%;
+}
+
+header {
+	background-color: #f5f5f5;
+    width: 100%;
+}
