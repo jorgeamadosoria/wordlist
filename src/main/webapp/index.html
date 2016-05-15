@@ -8,45 +8,44 @@
 <link href="dist/css/app.css" rel="stylesheet">
 </head>
 <body>
-	<header>
-		<div class="row">
-			<div class="col-lg-2">
-				<a href="index.html"><img class="logo" src="dist/img/logo.png"></a>
-			</div>
-			<div class="col-lg-10">
-				<div class="row">
-					<div class="col-lg-6 col-lg-offset-3">
-						<div id="letters" class="panel panel-primary">
-							<div class="panel-body">
-								<form action="list" method="get">
-
+	<div id="container">
+		<header>
+			<div class="row">
+				<div class="col-lg-2">
+					<a href="index.html"><img class="logo" src="dist/img/logo.png"></a>
+				</div>
+				<div class="col-lg-10">
+					<div class="row">
+						<div class="col-lg-6 col-lg-offset-3">
+							<div id="letters" class="panel panel-primary">
+								<div class="panel-body">
 									<div class="row">
 										<div class="col-lg-1 col-lg-offset-2">
 											<input name="letters0" class="letter form-control"
-												maxlength="1">
+												maxlength="1" tabindex="1">
 										</div>
 										<div class="col-lg-1">
 											<input name="letters1" class="letter form-control"
-												maxlength="1">
+												maxlength="1" tabindex="2">
 										</div>
 										<div class="col-lg-1">
 											<input name="letters2" class="letter form-control"
-												maxlength="1">
+												maxlength="1" tabindex="3">
 										</div>
 										<div class="col-lg-1">
 											<input name="letters3" class="letter form-control"
-												maxlength="1">
+												maxlength="1" tabindex="4">
 										</div>
 										<div class="col-lg-1">
 											<input name="letters4" class="letter form-control"
-												maxlength="1">
+												maxlength="1" tabindex="5">
 										</div>
 										<div class="col-lg-1">
 											<input name="letters5" class="letter form-control"
-												maxlength="1">
+												maxlength="1" tabindex="6">
 										</div>
 										<div class="col-lg-2">
-											<select name="length" class="form-control">
+											<select name="length" class="form-control" tabindex="13">
 												<option>3</option>
 												<option>4</option>
 												<option>5</option>
@@ -63,53 +62,116 @@
 									<div class="row">
 										<div class="col-lg-1 col-lg-offset-2">
 											<input name="letters6" class="letter form-control"
-												maxlength="1">
+												maxlength="1" tabindex="7">
 										</div>
 										<div class="col-lg-1">
 											<input name="letters7" class="letter form-control"
-												maxlength="1">
+												maxlength="1" tabindex="8">
 										</div>
 										<div class="col-lg-1">
 											<input name="letters8" class="letter form-control"
-												maxlength="1">
+												maxlength="1" tabindex="9">
 										</div>
 										<div class="col-lg-1">
 											<input name="letters9" class="letter form-control"
-												maxlength="1">
+												maxlength="1" tabindex="10">
 										</div>
 										<div class="col-lg-1">
 											<input name="letters10" class="letter form-control"
-												maxlength="1">
+												maxlength="1" tabindex="11">
 										</div>
 										<div class="col-lg-1">
 											<input name="letters11" class="letter form-control"
-												maxlength="1">
+												maxlength="1" tabindex="12">
 										</div>
 										<div class="col-lg-2">
-											<input type="submit" class="btn btn-default" value="Search"/>
+											<button id="submit" tabindex="14"
+												class="form-control btn btn-default">Search</button>
 										</div>
 									</div>
-								</form>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</header>
-	<div class="row">
-		<div class="col-lg-10 col-lg-offset-1">
-			<div id="list"></div>
-		</div>
-	</div>
-	<footer class="footer">
-		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 text-center">
-				2016 - <a href="https://github.com/jorgeamadosoria/wordlist"><i
-					class="fa fa-github"></i></a>
+		</header>
+		<div id="body">
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-3">
+					<div class="padding-right filter-panel panel panel-primary">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-lg-1">
+									<input name="filter0" data-pos="0" class="letter form-control"
+										maxlength="1">
+								</div>
+								<div class="col-lg-1">
+									<input name="filter1" data-pos="1" class="letter form-control"
+										maxlength="1">
+								</div>
+								<div class="col-lg-1">
+									<input name="filter2" data-pos="2" class="letter form-control"
+										maxlength="1">
+								</div>
+								<div class="col-lg-1">
+									<input name="filter3" data-pos="3" class="letter form-control"
+										maxlength="1">
+								</div>
+								<div class="col-lg-1">
+									<input name="filter4" data-pos="4" class="letter form-control"
+										maxlength="1">
+								</div>
+								<div class="col-lg-1">
+									<input name="filter5" data-pos="5" class="letter form-control"
+										maxlength="1">
+								</div>
+
+								<div class="col-lg-1">
+									<input name="filter6" data-pos="6" class="letter form-control"
+										maxlength="1">
+								</div>
+								<div class="col-lg-1">
+									<input name="filter7" data-pos="7" class="letter form-control"
+										maxlength="1">
+								</div>
+								<div class="col-lg-1">
+									<input name="filter8" data-pos="8" class="letter form-control"
+										maxlength="1">
+								</div>
+								<div class="col-lg-1">
+									<input name="filter9" data-pos="9" class="letter form-control"
+										maxlength="1">
+								</div>
+								<div class="col-lg-1">
+									<input name="filter10" data-pos="10"
+										class="letter form-control" maxlength="1">
+								</div>
+								<div class="col-lg-1">
+									<input name="filter11" data-pos="11"
+										class="letter form-control" maxlength="1">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-10 col-lg-offset-1">
+					<div id="wtemplate" class="word col-lg-2 hidden"></div>
+					<div id="list"></div>
+				</div>
 			</div>
 		</div>
-	</footer>
+		<footer>
+			<div class="row">
+				<div class="col-lg-10 col-lg-offset-1 text-center">
+					2016 - <a href="https://github.com/jorgeamadosoria/wordlist"><i
+						class="fa fa-github"></i></a>
+				</div>
+			</div>
+		</footer>
+	</div>
 	<script src="dist/js/jquery.min.js"></script>
 	<script src="dist/js/jquery-ui.min.js"></script>
 	<script src="dist/js/app.js"></script>

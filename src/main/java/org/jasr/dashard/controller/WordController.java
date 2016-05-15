@@ -1,5 +1,6 @@
 package org.jasr.dashard.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,9 +17,12 @@ public class WordController {
 	@Autowired
 	private WordDAO wordDAO;
 
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public List<String> list(Integer length, String[] letters) {
+	@RequestMapping(value = "/list", method = RequestMethod.POST)
+	public List<String> list(Integer length, String letters0,
+	        String letters1,String letters2,String letters3,String letters4,String letters5,
+	        String letters6,String letters7,String letters8,String letters9,String letters10,String letters11) {
 
+	    String[] letters = {letters0,letters1,letters2,letters3,letters4,letters5,letters6,letters7,letters8,letters9,letters10,letters11};
 		Map<Character, Integer> map = new HashMap<>();
 		for (String s : letters) {
 		    Character c = s.toLowerCase().charAt(0);
