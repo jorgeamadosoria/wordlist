@@ -1,16 +1,20 @@
 function init() {
 
-/*	$("#letters .form-control").keypress(function(e) {
-		if ($(this).val().length > 0) {
-			var tabIndex = $(this).attr("tabindex");
-			if (tabIndex == 14)
-				tabIndex = 0;
-			else
-				tabIndex++;
-			$("[tabIndex=" + tabIndex + "]").focus();
+	$(".filter-panel .filter-letter").keypress(function(e) {
+		if(e.which < 97 || e.which > 122){
+			return false;
 		}
 	});
-*/
+	
+	
+	$(".letter").keypress(function(e) {
+		if(e.which < 97 || e.which > 122){
+			return false;
+		}
+	});
+	
+	
+	
 	$(".filter-panel .filter-letter")
 			.keyup(
 					function(e) {
@@ -82,10 +86,12 @@ function init() {
 					success : function(e) {
 						$("#list").empty();
 						var len = $('select[name=length]').val();
-						$(".filter-panel .filter-letter").val("").hide().each(function(e) {
-							if ($(this).data("pos") < len)
-								$(this).show();
-						});
+						$("#flogo").show();
+						$(".filter-panel .filter-letter").val("").hide().each(
+								function(e) {
+									if ($(this).data("pos") < len)
+										$(this).show();
+								});
 
 						for (var i = 0; i < e.length; i++) {
 							var word = $("#wtemplate").clone().removeClass(
