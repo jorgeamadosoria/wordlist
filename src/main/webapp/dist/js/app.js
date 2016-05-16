@@ -1,6 +1,6 @@
 function init() {
 
-	$("#letters .form-control").keypress(function(e) {
+/*	$("#letters .form-control").keypress(function(e) {
 		if ($(this).val().length > 0) {
 			var tabIndex = $(this).attr("tabindex");
 			if (tabIndex == 14)
@@ -10,9 +10,9 @@ function init() {
 			$("[tabIndex=" + tabIndex + "]").focus();
 		}
 	});
-
-	$(".filter-panel .form-control")
-			.keypress(
+*/
+	$(".filter-panel .filter-letter")
+			.keyup(
 					function(e) {
 						var len = $('select[name=length]').val();
 						var filterData = "";
@@ -50,7 +50,7 @@ function init() {
 						if (len >= 12)
 							filterData += ($('input[name=filter11]').val().length == 0) ? "."
 									: $('input[name=filter11]').val();
-						//alert(filterData);
+
 						$("#list .word").hide().each(function(e) {
 							if ($(this).text().match(filterData) != null) {
 								$(this).show();
@@ -81,9 +81,16 @@ function init() {
 					data : formData,
 					success : function(e) {
 						$("#list").empty();
+						var len = $('select[name=length]').val();
+						$(".filter-panel .filter-letter").val("").hide().each(function(e) {
+							if ($(this).data("pos") < len)
+								$(this).show();
+						});
+
 						for (var i = 0; i < e.length; i++) {
 							var word = $("#wtemplate").clone().removeClass(
 									"hidden").text(e[i]);
+
 							$("#list").append(word);
 						}
 					}
