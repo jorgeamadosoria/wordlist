@@ -13,7 +13,9 @@ function init() {
 		}
 	});
 	
-	
+	$("#list").delegate(".word","click",function(e) {
+		$(this).toggleClass("text-muted");
+	});
 	
 	$(".filter-panel .filter-letter")
 			.keyup(
