@@ -17,6 +17,12 @@ public class WordController {
 	@Autowired
 	private WordDAO wordDAO;
 
+	int get(Character c, Map<Character,Integer> map){
+		if (map.containsKey(c))
+			return map.get(c);
+		return 0;
+	}
+	
 	@RequestMapping(value = "/list", method = RequestMethod.POST)
 	public List<String> list(Integer length, String letters0,
 	        String letters1,String letters2,String letters3,String letters4,String letters5,
@@ -26,13 +32,16 @@ public class WordController {
 		Map<Character, Integer> map = new HashMap<>();
 		for (String s : letters) {
 		    Character c = s.toLowerCase().charAt(0);
-			map.merge(c,1, (k, v) -> v + 1);
+		    if (map.containsKey(c))
+		    	map.put(c, map.get(c)+1);
+		    else
+		    	map.put(c, 1);
 		}
 
-		return wordDAO.list(length, map.getOrDefault('a',0), map.getOrDefault('b',0), map.getOrDefault('c',0), map.getOrDefault('d',0), map.getOrDefault('e',0), map.getOrDefault('f',0),
-				map.getOrDefault('g',0), map.getOrDefault('h',0), map.getOrDefault('i',0), map.getOrDefault('j',0), map.getOrDefault('k',0), map.getOrDefault('l',0), map.getOrDefault('m',0),
-				map.getOrDefault('n',0), map.getOrDefault('o',0), map.getOrDefault('p',0), map.getOrDefault('q',0), map.getOrDefault('r',0), map.getOrDefault('s',0), map.getOrDefault('t',0),
-				map.getOrDefault('u',0), map.getOrDefault('v',0), map.getOrDefault('w',0), map.getOrDefault('x',0), map.getOrDefault('y',0), map.getOrDefault('z',0));
+		return wordDAO.list(length, get('a',map), get('b',map), get('c',map), get('d',map), get('e',map), get('f',map),
+				get('g',map), get('h',map), get('i',map), get('j',map), get('k',map), get('l',map), get('m',map),
+				get('n',map), get('o',map), get('p',map), get('q',map), get('r',map), get('s',map), get('t',map),
+				get('u',map), get('v',map), get('w',map), get('x',map), get('y',map), get('z',map));
 	}
 
 }
