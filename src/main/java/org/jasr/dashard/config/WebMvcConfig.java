@@ -1,6 +1,6 @@
 package org.jasr.dashard.config;
 
-import org.jasr.dashard.Application;
+import org.jasr.wordlist.Application;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;

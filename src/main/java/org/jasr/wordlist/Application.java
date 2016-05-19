@@ -1,3 +1,3 @@
-package org.jasr.dashard;
+package org.jasr.wordlist;
 
 public interface Application {}

@@ -82,9 +82,12 @@ function init() {
 					'letters11' : $('input[name=letters11]').val()
 				};
 				$.ajax({
-					url : "list",
+					url : "/list",
 					method : "POST",
 					data : formData,
+					beforeSend: function(e){
+						$("i#bsearch").removeClass("fa-search").addClass("fa-spinner");
+					},
 					success : function(e) {
 						$("#list").empty();
 						var len = $('select[name=length]').val();
@@ -101,6 +104,9 @@ function init() {
 
 							$("#list").append(word);
 						}
+					},
+					complete: function(e){
+						$("i#bsearch").removeClass("fa-spinner").addClass("fa-search");
 					}
 				});
 			});
