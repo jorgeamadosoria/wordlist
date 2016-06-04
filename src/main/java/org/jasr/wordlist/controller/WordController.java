@@ -26,7 +26,7 @@ public class WordController {
     }
 
     private boolean val(String letter) {
-        return (!Strings.isNullOrEmpty(letter) && letter.length() == 1 && !Character.isLetter(letter.charAt(0)));
+        return (!Strings.isNullOrEmpty(letter) && letter.length() == 1 && Character.isLetter(letter.charAt(0)));
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.POST)

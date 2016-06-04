@@ -1,22 +1,21 @@
 function init() {
 
 	$(".filter-panel .filter-letter").keypress(function(e) {
-		if(e.which < 97 || e.which > 122){
+		if (e.which < 97 || e.which > 122) {
 			return false;
 		}
 	});
-	
-	
+
 	$(".letter").keypress(function(e) {
-		if(e.which < 97 || e.which > 122){
+		if (e.which < 97 || e.which > 122) {
 			return false;
 		}
 	});
-	
-	$("#list").delegate(".word","click",function(e) {
+
+	$("#list").delegate(".word", "click", function(e) {
 		$(this).toggleClass("text-muted");
 	});
-	
+
 	$(".filter-panel .filter-letter")
 			.keyup(
 					function(e) {
@@ -81,34 +80,51 @@ function init() {
 					'letters10' : $('input[name=letters10]').val(),
 					'letters11' : $('input[name=letters11]').val()
 				};
-				$.ajax({
-					url : "/list",
-					method : "POST",
-					data : formData,
-					beforeSend: function(e){
-						$("i#bsearch").removeClass("fa-search").addClass("fa-spinner");
-					},
-					success : function(e) {
-						$("#list").empty();
-						var len = $('select[name=length]').val();
-						$("#flogo").show();
-						$(".filter-panel .filter-letter").val("").hide().each(
-								function(e) {
-									if ($(this).data("pos") < len)
-										$(this).show();
-								});
 
-						for (var i = 0; i < e.length; i++) {
-							var word = $("#wtemplate").clone().removeClass(
-									"hidden").text(e[i]);
+				if ($('input[name=letters11]').val().length != 0 && 
+				$('input[name=letters1').val().length != 0 &&
+				$('input[name=letters2').val().length != 0 &&
+				$('input[name=letters3').val().length != 0 &&
+				$('input[name=letters4').val().length != 0 &&
+				$('input[name=letters5').val().length != 0 &&
+				$('input[name=letters6').val().length != 0 &&
+				$('input[name=letters7').val().length != 0 &&
+				$('input[name=letters8').val().length != 0 &&
+				$('input[name=letters9').val().length != 0 &&
+				$('input[name=letters10').val().length != 0) {
 
-							$("#list").append(word);
+					$.ajax({
+						url : "/list",
+						method : "POST",
+						data : formData,
+						beforeSend : function(e) {
+							$("i#bsearch").removeClass("fa-search").addClass(
+									"fa-spin fa-spinner");
+						},
+						success : function(e) {
+							$("#list").empty();
+							var len = $('select[name=length]').val();
+							$("#flogo").show();
+							$(".filter-panel .filter-letter").val("").hide()
+									.each(function(e) {
+										if ($(this).data("pos") < len)
+											$(this).show();
+									});
+
+							for (var i = 0; i < e.length; i++) {
+								var word = $("#wtemplate").clone().removeClass(
+										"hidden").text(e[i]);
+
+								$("#list").append(word);
+							}
+						},
+						complete : function(e) {
+							$("i#bsearch").removeClass("fa-spinner")
+									.removeClass("fa-spin").addClass(
+											"fa-search");
 						}
-					},
-					complete: function(e){
-						$("i#bsearch").removeClass("fa-spinner").addClass("fa-search");
-					}
-				});
+					});
+				}
 			});
 
 }
