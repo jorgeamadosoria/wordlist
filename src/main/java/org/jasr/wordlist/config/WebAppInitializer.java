@@ -1,4 +1,4 @@
-package org.jasr.dashard.config;
+package org.jasr.wordlist.config;
 
 import javax.servlet.Filter;
 import javax.servlet.ServletRegistration;

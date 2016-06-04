@@ -1,4 +1,4 @@
-package org.jasr.dashard.dao;
+package org.jasr.wordlist.dao;
 
 import java.util.List;
 

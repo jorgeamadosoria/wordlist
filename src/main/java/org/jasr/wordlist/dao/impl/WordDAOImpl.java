@@ -1,10 +1,10 @@
-package org.jasr.dashard.dao.impl;
+package org.jasr.wordlist.dao.impl;
 
 import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.jasr.dashard.dao.WordDAO;
+import org.jasr.wordlist.dao.WordDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;

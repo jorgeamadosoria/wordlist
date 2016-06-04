@@ -1,4 +1,4 @@
-package org.jasr.dashard.config;
+package org.jasr.wordlist.config;
 
 import java.sql.Connection;
 import java.sql.SQLException;

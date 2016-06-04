@@ -1,4 +1,4 @@
-package org.jasr.dashard.config;
+package org.jasr.wordlist.config;
 
 import org.jasr.wordlist.Application;
 import org.springframework.context.annotation.Bean;

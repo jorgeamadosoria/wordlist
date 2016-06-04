@@ -1,14 +1,12 @@
-package org.jasr.dashard.controller;
+package org.jasr.wordlist.controller;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.jasr.dashard.dao.WordDAO;
+import org.jasr.wordlist.dao.WordDAO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
