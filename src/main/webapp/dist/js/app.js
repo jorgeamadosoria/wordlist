@@ -1,13 +1,13 @@
 function init() {
 
-	$(".filter-panel .filter-letter").keypress(function(e) {
-		if (e.which < 97 || e.which > 122) {
+	$(".filter-panel .filter-letter").keyup(function(e) {
+		if ((e.which < 97 || e.which > 122) && e.which != 8 && e.which != 46 && e.which != 9) {
 			return false;
 		}
 	});
 
-	$(".letter").keypress(function(e) {
-		if (e.which < 97 || e.which > 122) {
+	$(".letter").keyup(function(e) {
+		if ((e.which < 97 || e.which > 122) && e.which != 8 && e.which != 46 && e.which != 9) {
 			return false;
 		}
 	});
